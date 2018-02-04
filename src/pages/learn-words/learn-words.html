@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Learn Words</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h5 text-center>{{wordsContent.title}}</h5>
+  <ion-card padding>
+    <p [innerHTML]="wordsContent.description"></p>
+    <button ion-button round block *ngFor="let wordList of wordsContent.words" (click)="viewWordList(wordList);">
+    {{wordList.title}}
+  </button>
+  </ion-card>
+</ion-content>

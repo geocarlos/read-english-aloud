@@ -1,0 +1,18 @@
+{
+  "NAV":{
+    "HOME":"Home",
+    "LEARN":"Learn",
+    "PRACTICE":"Practice"
+  },
+  "HOME": {
+    "DESCRIPTION": "Este aplicativo tem o objetivo de ajudar pessoas que conseguem se virar com o inglês escrito, mas não conseguem entender a relação entre as palavras escritas e sua pronúncia."
+  },
+
+  "LEARN_OPTIONS":{
+    "TITLE": "Conteúdo disponível para estudar"
+  },
+
+  "PRACTICE_OPTIONS":{
+    "TITLE": "Escolha um conteúdo para praticar"
+  }
+}

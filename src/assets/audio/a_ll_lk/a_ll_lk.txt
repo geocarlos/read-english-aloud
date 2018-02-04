@@ -1,0 +1,1 @@
+﻿all,<br>ball,<br>mall,<br>gall,<br>fall,<br>small,<br>call,<br>wall,<br>hall,<br>walk,<br>talk,<br>stalk,<br>chalk

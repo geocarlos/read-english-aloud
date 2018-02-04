@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{wordList.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <p [innerHTML]="wordList.explanation"></p>.
+  <ion-card>
+    <ion-row>
+      <ion-col col-4 *ngFor="let word of wordList.words" text-center>
+        <ion-card block>
+          <p><strong>{{word.text}}</strong></p>
+          <p>/{{word.ipa}}/</p>
+          <button style="background-color: transparent;" icon-only block (click)="word.playSound()"><ion-icon name="megaphone"></ion-icon></button>
+          <p><a color="secondary" style="text-transform: none;" ion-button small href="http://pt.bab.la/dicionario/ingles-portugues/{{word.text}}">Meaning</a></p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

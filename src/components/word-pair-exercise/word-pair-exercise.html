@@ -1,0 +1,16 @@
+<div>
+  <h4>{{exercise.title}}</h4>
+
+  <p>Listen and click on the word that you have heard.</p>
+  <div text-right><h5>Your score: {{exercise.score}}</h5></div>
+
+  <ion-row>
+    <ion-col col-4 text-center *ngFor="let word of exercise.words">
+      <ion-card>
+        <button style="background: transparent" (click)="checkAnswer(word.text);">{{word.text}}</button>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  <button ion-button block (click)="setRound();">Hear word</button>
+  <button *ngIf="exercise.score > 0" ion-button block (click)="resetExercise();">Reset the score</button>
+</div>

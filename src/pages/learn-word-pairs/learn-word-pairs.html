@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>Learn</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <h5 text-center>{{wordPairsContent.title}}</h5>
+  <ion-card padding>
+    <p [innerHTML]="wordPairsContent.description"></p>
+  </ion-card>
+  <word-pair-study-content [wordPairs]="wordPairsContent.words" [exceptions]="wordPairsContent.exceptions" ></word-pair-study-content>
+</ion-content>

@@ -1,0 +1,18 @@
+{
+  "NAV":{
+    "HOME":"Home",
+    "LEARN":"Learn",
+    "PRACTICE":"Practice"
+  },
+  "HOME": {
+    "DESCRIPTION": "This app is intended to help people who can handle written English, but cannot understand the relation between the written words and their pronunciation."
+  },
+
+  "LEARN_OPTIONS":{
+    "TITLE": "Content available to study"
+  },
+
+  "PRACTICE_OPTIONS":{
+    "TITLE": "Choose a content to practice"
+  }
+}

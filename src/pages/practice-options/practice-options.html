@@ -1,0 +1,15 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>{{PRACTICE_OPTIONS.TITLE}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-buttons *ngFor="let option of options">
+    <button ion-button block (click)="goToExercisePage(option.list)">{{option.content.title}}</button>
+  </ion-buttons>
+</ion-content>

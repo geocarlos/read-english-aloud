@@ -1,0 +1,38 @@
+<ion-card *ngFor="let wordPair of wordPairs" padding="5" style="padding: 3px" (swipe)="handleSwipe($event, wordPair)">
+  <div text-center><button style="background: transparent" (click)="toggleShow(wordPair);">{{wordPair.title}}</button></div>
+  <ion-row *ngIf="wordPair.showing">
+    <button style="background: transparent"><ion-icon name="arrow-dropleft" (click)="backwards(wordPair)"></ion-icon></button>
+    <ion-col style="border-radius: 0.5rem; margin-right: 1px; background: #ffc947;" text-center>
+      <p><strong>{{wordPair.words[i].text}}</strong></p>
+      <p>/{{wordPair.words[i].ipa}}/</p>
+      <button style="background-color: transparent" icon-only block (click)="wordPair.words[i].playSound()"><ion-icon name="megaphone"></ion-icon></button>
+      <p><a style="text-transform: none;" ion-button small href="http://pt.bab.la/dicionario/ingles-portugues/{{wordPair.words[i].text}}">View meaning</a></p>
+    </ion-col>
+    <ion-col style="border-radius: 0.5rem; background: #ffc947;" text-center>
+      <p><strong>{{wordPair.words[i+1].text}}</strong></p>
+      <p>/{{wordPair.words[i+1].ipa}}/</p>
+      <button style="background-color: transparent" icon-only block (click)="wordPair.words[i+1].playSound()"><ion-icon name="megaphone"></ion-icon></button>
+      <p><a style="text-transform: none;" ion-button small href="http://pt.bab.la/dicionario/ingles-portugues/{{wordPair.words[i+1].text}}">View meaning</a></p>
+    </ion-col>
+    <button style="background: transparent"><ion-icon name="arrow-dropright" (click)="forward(wordPair)"></ion-icon></button>
+  </ion-row>
+</ion-card>
+
+<!-- Exceptions to the rules -->
+<ion-card padding="5" style="padding: 3px" (swipe)="handleExSwipe($event)">
+  <div text-center><button style="background: transparent" (click)="toggleShowExceptions();">Exceções às regras acima</button></div>
+  <ion-row *ngIf="showExceptions">
+    <button style="background: transparent"><ion-icon name="arrow-dropleft" (click)="backException()"></ion-icon></button>
+    <ion-col style="border-radius: 0.5rem; margin-right: 1px; background: #ffc947;" text-center>
+      <p><strong>{{exceptions[ie].text}}</strong></p>
+      <p>/{{exceptions[ie].ipa}}/</p>
+      <p *ngIf="exceptions[ie].text === 'Job'"><em>Exceção só quando <strong>Job</strong> significa <strong>Jó</strong></em></p>
+      <p *ngIf="exceptions[ie].text === 'vase'"><em>Exceção só em inglês britânico</em></p>
+      <p *ngIf="exceptions[ie].text === 'live'"><em>Exceção só quando é verbo</em></p>
+      <p *ngIf="exceptions[ie].text === 'put' || exceptions[ie].text === 'push'"><em>Marcado como exceção porque o U não soa /ʌ/</em></p>
+      <button style="background-color: transparent" icon-only block (click)="exceptions[ie].playSound()"><ion-icon name="megaphone"></ion-icon></button>
+      <p><a style="text-transform: none;" ion-button small href="http://pt.bab.la/dicionario/ingles-portugues/{{exceptions[ie].text}}">View meaning</a></p>
+    </ion-col>
+    <button style="background: transparent"><ion-icon name="arrow-dropright" (click)="forwardException()"></ion-icon></button>
+  </ion-row>
+</ion-card>

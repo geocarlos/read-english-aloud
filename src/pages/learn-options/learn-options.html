@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <!-- <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button> -->
+    <ion-title>{{LEARN_OPTIONS.TITLE}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-buttons *ngFor="let option of options">
+    <button ion-button block (click)="goToLearnPage(option.list)">{{option.content.title}}</button>
+  </ion-buttons>
+</ion-content>
